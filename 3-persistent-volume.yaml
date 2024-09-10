@@ -1,0 +1,15 @@
+#This manifest creates a PersistentVolume named my-pv with a capacity of 10Gi, using the hostPath volume type. It can be mounted as read-write by a single node and will retain the volume even after it is released1.
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-c1-nfs-storage
+spec:
+  capacity:
+    storage: 2Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: 192.168.100.74
+    path: "/export/volumes/pod"

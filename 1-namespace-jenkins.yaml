@@ -1,0 +1,7 @@
+#This manifest creates a namespace called development. 
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: jenkins
+  labels:
+    name: jenkins
